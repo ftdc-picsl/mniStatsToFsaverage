@@ -1,15 +1,3 @@
-# mniStatsToFsaverage
-Workflow to project group data from MNI to fsaverage for visualization
-
-## This is a WIP
-
-Validate outputs carefully! It would be wise to include slices of the MNI data as
-supplementary figures.
-
-Note that no masking is applied here, so if your input data does not align well to the MNI
-cortex, projections may include background voxels.
-
-
 ## Requirements
 
     * Python with the regfusion package installed (`pip install regfusion`)

@@ -6,49 +6,15 @@ Workflow to project group data from MNI to fsaverage for visualization
 Validate outputs carefully! It would be wise to include slices of the MNI data as
 supplementary figures.
 
-Note that no masking is applied here, so if your input data does not align well to the MNI
-cortex, projections may include background voxels.
+
+## regfusion
+
+This uses the regfusion package to project group-level statistical maps from MNI152NLin6Asym space
+to the fsaverage surface space. It is based on the original method by Wu et al. (2018).
+See the README for citations and usage instructions.
 
 
-## Requirements
+## neuromaps
 
-    * Python with the regfusion package installed (`pip install regfusion`)
-    * Freesurfer
-
-
-## Usage
-
-```
-./mni_stats_to_fsaverage.py input.nii.gz output_dir [--interp linear|nearest]
-```
-
-Where `input.nii.gz` is a group-level statistical map in MNI152NLin6Asym space, and
-`output_dir` is the directory where the output files will be written.
-
-The original outputs are "func.gii" files, but we fix the intent to "shape" so that
-Freeview can load them correctly. The output files will be named `lh.regfusion.shape.gii` and
-`rh.regfusion.shape.gii` for the left and right hemispheres, respectively.
-```
-
-## Visualization
-
-First load the hemisphere into freeview, then interactively load the output as an overlay
-
-```
-freeview \
-  -f $FREESURFER_HOME/subjects/fsaverage/surf/lh.inflated \
-  -f $FREESURFER_HOME/subjects/fsaverage/surf/rh.inflated
-```
-
-You can then load the output files as a "generic" overlay. For reasons I don't understand,
-it won't load if specified on the command line.
-
-## Citation
-
-Please credit the Python package
-
-https://github.com/danjgale/reg-fusion
-
-and cite the original paper:
-
-Wu J, Ngo GH, Greve DN, Li J, He T, Fischl B, Eickhoff SB, Yeo BTT. Accurate nonlinear mapping between MNI volumetric and FreeSurfer surface coordinate systems, Human Brain Mapping 39:3793–3808, 2018.
+This uses nilearn and neuromaps, and offers a bit more flexibility in terms of sampling.
+See the README for citations and usage instructions.
