@@ -16,7 +16,6 @@ Where `input.nii.gz` is a group-level statistical map in MNI152NLin6Asym space, 
 The original outputs are "func.gii" files, but we fix the intent to "shape" so that
 Freeview can load them correctly. The output files will be named `lh.regfusion.shape.gii` and
 `rh.regfusion.shape.gii` for the left and right hemispheres, respectively.
-```
 
 ## Visualization
 
