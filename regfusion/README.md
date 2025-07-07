@@ -1,7 +1,7 @@
 ## Requirements
 
-    * Python with the regfusion package installed (`pip install regfusion`)
-    * Freesurfer
+* Python with the regfusion package installed (`pip install regfusion`)
+* Freesurfer
 
 
 ## Usage
